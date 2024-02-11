@@ -4,4 +4,7 @@ from django.template import loader
 # Create your views here.
 
 def home(request):
-    return HttpResponse('Hello World!')
+    # template = loader.get_template('todo.html')
+    # print(template)
+    
+    return HttpResponse(render(request, 'todo.html'))
