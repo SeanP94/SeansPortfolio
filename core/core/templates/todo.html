@@ -15,14 +15,14 @@
                         <div class="row">
                             <div class="col-4 mb-2"><h2>To Do App</h2></div>
                             <div class="col-8">
-                                <form >
+                                <form hx-post="testClick/"
+                                hx-trigger="click"                             
+                                hx-target="#todoList"
+                                hx-swap="innerHTML" >
                                     {% csrf_token %}
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="New Task">
-                                        <button hx-post="testClick/"
-                                                hx-trigger="click"                             
-                                                hx-target="#todoList"
-                                                hx-swap="innerHTML"
+                                        <input name="taskName" type="text" class="form-control" placeholder="New Task">
+                                        <button
                                         class="btn btn-outline-secondary">Submit</button>
                                     </div>
                                 </form>
@@ -30,18 +30,7 @@
                         </div>
                     </div>
                     <div id="todoList" class="todoList">
-                        {% for task in tasks %}
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="float-start">
-                                        {{ task }}
-                                    </div>
-                                    <div class="float-end">
-                                        <a href="#" ><span class="badge rounded-pill bg-danger">X</span></a>
-                                    </div>
-                                </div>
-                            </div>   
-                        {% endfor %}       
+
                     </div>
                 </div>
             </div>
