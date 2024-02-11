@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='homepage'),
-    path('testClick/', views.clickTest),
-    path('todolist/', views.clickTest)
+    path('addTask/', views.addTask),
+    path('deleteTask/', views.deleteTask),
+    path('todolist/', views.addTask)
 
 ]

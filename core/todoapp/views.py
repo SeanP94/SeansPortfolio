@@ -14,13 +14,19 @@ def home(request: HttpRequest):
     return HttpResponse(render(request, 'todo.html', context=context))
 
 
-def clickTest(request : HttpRequest):
+def addTask(request : HttpRequest):
     '''Test to just do a click for htmx-get'''
     newTask = request.POST.get('taskName')
     print(newTask, type(newTask))
     if newTask != '' and newTask not in context['tasks']: context['tasks'].append(newTask)
     
     return HttpResponse(render(request, 'todo-list.html', context=context))
+
+def deleteTask(request : HttpRequest):
+    '''Test to just do a click for htmx-get'''
+    print(request)
+    return HttpResponse(render(request, 'todo-list.html', context=context))
+
 
 def todoList(request : HttpRequest):
     return HttpResponse(render(request,'todo-list.html', context=context))
