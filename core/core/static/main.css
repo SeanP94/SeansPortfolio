@@ -3,7 +3,9 @@
 }
 
 .todoMain {
-    margin-top: 10vh;
+    padding-top: 13vh;
+    /* Solve the slight border, since about 10px is allocated to html and body tag. */
+    height: calc(20vh - 10px); 
 }
 
 .todoList {

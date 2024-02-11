@@ -1,0 +1,14 @@
+{% block todoList %}
+    {% for task in tasks %}
+    <div class="card">
+        <div class="card-body">
+            <div class="float-start">
+                {{ task }}
+            </div>
+            <div class="float-end">
+                <a href="#" ><span class="badge rounded-pill bg-danger">X</span></a>
+            </div>
+        </div>
+    </div>   
+    {% endfor %}     
+{% endblock %}

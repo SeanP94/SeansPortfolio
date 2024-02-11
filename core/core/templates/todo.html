@@ -13,16 +13,23 @@
                 <div class="row mx-auto ">
                     <div class="border-bottom border-secondary border-2 todoMain">
                         <div class="row">
-                            <div class="col-4"><h1>To Do App</h1></div>
+                            <div class="col-4 mb-2"><h2>To Do App</h2></div>
                             <div class="col-8">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="New Task">
-                                    <button class="btn btn-outline-secondary">Submit</button>
-                                </div>
+                                <form >
+                                    {% csrf_token %}
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="New Task">
+                                        <button hx-post="testClick/"
+                                                hx-trigger="click"                             
+                                                hx-target="#todoList"
+                                                hx-swap="innerHTML"
+                                        class="btn btn-outline-secondary">Submit</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="todoList">
+                    <div id="todoList" class="todoList">
                         {% for task in tasks %}
                             <div class="card">
                                 <div class="card-body">
