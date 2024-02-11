@@ -6,5 +6,7 @@ from django.template import loader
 def home(request):
     # template = loader.get_template('todo.html')
     # print(template)
-    
-    return HttpResponse(render(request, 'todo.html'))
+    context = {
+        "tasks" : [f"Task: {x}" for x in range(1,16)]
+    }
+    return HttpResponse(render(request, 'todo.html', context=context))
