@@ -3,13 +3,17 @@ body {
     background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(204,204,217,1) 100%);
 }
 .todoMain {
-    padding-top: 13vh;
+    padding-top: 14vh;
     /* Solve the slight border, since about 10px is allocated to html and body tag. */
     height: calc(20vh - 10px); 
 }
 
+.nav {
+    height: 5vh;
+}
+
 .todoList {
-    height: 80vh;
+    height: 75vh;
     margin-top: 10px;
     overflow: scroll;
     /* background: pink; */
