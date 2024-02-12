@@ -4,7 +4,7 @@ from django.template import loader
 # Create your views here.
 
 context = {
-        "tasks" : []
+        "tasks" : ['Task: 1']
     }
 
 def home(request: HttpRequest):
