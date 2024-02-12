@@ -29,6 +29,9 @@ def deleteTask(request : HttpRequest, task):
         print(request)
     return HttpResponse(render(request, 'todo-list.html', context=context))
 
+def login(request):
+    return HttpResponse(render(request, 'login.html'))
 
-def todoList(request : HttpRequest):
-    return HttpResponse(render(request,'todo-list.html', context=context))
+
+def logout(request):
+    return HttpResponse(render(request, 'logout.html'))

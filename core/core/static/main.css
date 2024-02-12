@@ -1,7 +1,7 @@
-.todoPage {
-    background: linear-gradient(90deg, rgba(204,204,217,1) 0%, rgba(255,255,255,1) 50%, rgba(204,204,217,1) 100%);
+body {
+    /* background: rgb(255,255,255); */
+    background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(204,204,217,1) 100%);
 }
-
 .todoMain {
     padding-top: 13vh;
     /* Solve the slight border, since about 10px is allocated to html and body tag. */
@@ -13,4 +13,18 @@
     margin-top: 10px;
     overflow: scroll;
     /* background: pink; */
+}
+
+.loginBox {
+    background-color: rgba(204,204,217,1);
+    margin: auto;
+    margin-top: 200px;
+    width: 50%;
+    height: 60%;
+    box-shadow: 1px 3px 3px #565c75;
+    padding: 50px;
+}
+
+.loginBox > h2 {
+    color: #292a30;
 }

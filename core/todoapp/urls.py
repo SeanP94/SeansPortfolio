@@ -5,6 +5,6 @@ urlpatterns = [
     path('', views.home, name='homepage'),
     path('addTask/', views.addTask),
     path('deleteTask/<str:task>', views.deleteTask, name='deleteTask'),
-    path('todolist/', views.addTask)
-
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout')
 ]
