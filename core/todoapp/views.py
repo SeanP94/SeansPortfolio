@@ -17,14 +17,16 @@ def home(request: HttpRequest):
 def addTask(request : HttpRequest):
     '''Test to just do a click for htmx-get'''
     newTask = request.POST.get('taskName')
-    print(newTask, type(newTask))
     if newTask != '' and newTask not in context['tasks']: context['tasks'].append(newTask)
-    
     return HttpResponse(render(request, 'todo-list.html', context=context))
 
-def deleteTask(request : HttpRequest):
+def deleteTask(request : HttpRequest, task):
     '''Test to just do a click for htmx-get'''
-    print(request)
+    if request.method == 'DELETE':
+        print(task)
+        context['tasks'].remove(task)
+        
+        print(request)
     return HttpResponse(render(request, 'todo-list.html', context=context))
 
 
