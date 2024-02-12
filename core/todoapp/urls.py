@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.home, name='homepage'),
     path('addTask/', views.addTask),
     path('deleteTask/<str:task>', views.deleteTask, name='deleteTask'),
-    path('login/', views.login, name='login'),
-    path('logout/', views.logout, name='logout')
+    path('login/', include('django.contrib.auth.urls')),
+    path('login/', views.loginUser, name='login'),
+    path('logout/', views.logoutUser, name='logout')
 ]
