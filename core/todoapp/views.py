@@ -2,19 +2,14 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from django.template import loader
 from django.contrib.auth import authenticate, login, logout
+from .models import Tasks
 
 
 # Create your views here.
 
-context = {
-        "tasks" : []
-    }
 
 def home(request: HttpRequest):
-    # template = loader.get_template('todo.html')
-    # print(template)
-    print(request.user.is_authenticated)
-    return HttpResponse(render(request, 'todo.html', context=context))
+    return HttpResponse(render(request, 'todo.html', {"tasks" : Tasks.objects.all()}))
 
 
 def addTask(request : HttpRequest):
@@ -22,17 +17,21 @@ def addTask(request : HttpRequest):
     if not request.user.is_authenticated:
         return HttpResponse(render(request, 'notify-login.html'))
     newTask = request.POST.get('taskName')
-    if newTask != '' and newTask not in context['tasks']: context['tasks'].append(newTask)
-    return HttpResponse(render(request, 'todo-list.html', context=context))
+    if newTask != '' and not Tasks.objects.filter(name=newTask):        
+        task = Tasks(name=newTask, author=request.user)
+        task.save()
+
+    return HttpResponse(render(request, 'todo-list.html', {"tasks" : Tasks.objects.all()}))
 
 def deleteTask(request : HttpRequest, task):
     '''Test to just do a click for htmx-get'''
+
     if request.method == 'DELETE':
-        context['tasks'].remove(task)
-    return HttpResponse(render(request, 'todo-list.html', context=context))
+        Tasks.objects.get(name=task).delete()
+    return HttpResponse(render(request, 'todo-list.html', {"tasks" : Tasks.objects.all()}))
 
 def loginUser(request):
-    print('helloooo')
+    
     if request.method == 'GET':
         return HttpResponse(render(request, 'registration/login.html'))
     if request.method == 'POST':
