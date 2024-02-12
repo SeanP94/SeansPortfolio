@@ -28,3 +28,17 @@ body {
 .loginBox > h2 {
     color: #292a30;
 }
+
+.notifyBox {
+    background-color: rgba(204,204,217,1);
+    margin: auto;
+    margin-top: 200px;
+    width: 50%;
+    height: 30%;
+    box-shadow: 1px 3px 3px #565c75;
+    padding: 50px;
+}
+
+.notifyBox > h2 {
+    color: #292a30;
+}

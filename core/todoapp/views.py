@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
 context = {
-        "tasks" : ['Task: 1']
+        "tasks" : []
     }
 
 def home(request: HttpRequest):
@@ -19,6 +19,8 @@ def home(request: HttpRequest):
 
 def addTask(request : HttpRequest):
     '''Test to just do a click for htmx-get'''
+    if not request.user.is_authenticated:
+        return HttpResponse(render(request, 'notify-login.html'))
     newTask = request.POST.get('taskName')
     if newTask != '' and newTask not in context['tasks']: context['tasks'].append(newTask)
     return HttpResponse(render(request, 'todo-list.html', context=context))
@@ -26,10 +28,7 @@ def addTask(request : HttpRequest):
 def deleteTask(request : HttpRequest, task):
     '''Test to just do a click for htmx-get'''
     if request.method == 'DELETE':
-        print(task)
         context['tasks'].remove(task)
-        
-        print(request)
     return HttpResponse(render(request, 'todo-list.html', context=context))
 
 def loginUser(request):
@@ -41,8 +40,7 @@ def loginUser(request):
         passw = request.POST.get('password')
         user = authenticate(request, username=user, password=passw)
         if user is not None:
-            print('suvvsees')
-
+            
             login(request, user)
             return redirect('homepage')
         else:
