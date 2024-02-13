@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from django.template import loader
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from .models import Tasks
 
@@ -50,3 +51,15 @@ def loginUser(request):
 def logoutUser(request):
     logout(request)
     return redirect('homepage')
+
+
+def createUser(request):
+    if request.method == 'POST':
+        pass
+    return HttpResponse(render(request, 'registration/create-user.html'))
+
+
+# def userExists(request):
+#     '''Used with HTMX to print if username is in use or not from the create user page'''
+#     if request.method == 'GET':
+#         pass
