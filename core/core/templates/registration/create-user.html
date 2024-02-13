@@ -12,7 +12,12 @@
             {% csrf_token %}
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" name="username">
+                <input type="text" class="form-control" name="username"
+                hx-post="{% url 'userExists' %}"
+                hx-include="[name='username']"
+                hx-trigger="keyup"
+                hx-target="#userOut"
+                hx-swap="innerHTML">
                 <div id="userOut" class="form-text"></div>  
               </div>
               <div class="mb-3">

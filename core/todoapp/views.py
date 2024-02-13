@@ -59,7 +59,9 @@ def createUser(request):
     return HttpResponse(render(request, 'registration/create-user.html'))
 
 
-# def userExists(request):
-#     '''Used with HTMX to print if username is in use or not from the create user page'''
-#     if request.method == 'GET':
-#         pass
+def userExists(request):
+    '''Used with HTMX to print if username is in use or not from the create user page'''
+    
+    if User.objects.filter(username=request.POST.get('username')).exists():
+        return HttpResponse('<p class="text-danger">Username is in use!</p>')
+    return HttpResponse('<p class="text-success">Username is available!</p>')
