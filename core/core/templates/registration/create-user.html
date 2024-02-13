@@ -13,7 +13,7 @@
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" name="username"
-                hx-post="{% url 'userExists' %}"
+                hx-post="/userExists"
                 hx-include="[name='username']"
                 hx-trigger="keyup"
                 hx-target="#userOut"
