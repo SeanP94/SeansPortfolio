@@ -40,7 +40,6 @@ def loginUser(request):
         passw = request.POST.get('password')
         user = authenticate(request, username=user, password=passw)
         if user is not None:
-            
             login(request, user)
             return redirect('homepage')
         else:
@@ -55,7 +54,19 @@ def logoutUser(request):
 
 def createUser(request):
     if request.method == 'POST':
-        pass
+        if User.objects.filter(username=request.POST.get('username')).exists():
+            return redirect('createUser')
+        user = request.POST.get('username')
+        passw = request.POST.get('password')
+        u = User.objects.create(username=user)
+        u.set_password(passw)
+        u.save()
+        user = authenticate(request, username=user, password=passw)
+        if user is not None:
+            login(request, user)
+            return redirect('homepage')
+        else:
+            print("UNKNOWN LOGIN ERROR") # Shouldnt rise but is just for me.
     return HttpResponse(render(request, 'registration/create-user.html'))
 
 
