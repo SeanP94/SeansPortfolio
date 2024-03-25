@@ -1,0 +1,1 @@
+Anything that has a _todo  is an old version of a file. Only here until I get this site built out a bit more and its an ease of access/reference since I havent worked on webdev for about a month.*

@@ -10,31 +10,31 @@ from .models import Tasks
 
 
 def home(request: HttpRequest):
-    return HttpResponse(render(request, 'todo.html', {"tasks" : Tasks.objects.all()}))
+    return HttpResponse(render(request, 'todo_todo.html', {"tasks" : Tasks.objects.all()}))
 
 
 def addTask(request : HttpRequest):
     '''Test to just do a click for htmx-get'''
     if not request.user.is_authenticated:
-        return HttpResponse(render(request, 'notify-login.html'))
+        return HttpResponse(render(request, 'notify-login_todo.html'))
     newTask = request.POST.get('taskName')
     if newTask != '' and not Tasks.objects.filter(name=newTask):        
         task = Tasks(name=newTask, author=request.user)
         task.save()
 
-    return HttpResponse(render(request, 'todo-list.html', {"tasks" : Tasks.objects.all()}))
+    return HttpResponse(render(request, 'todo-list_todo.html', {"tasks" : Tasks.objects.all()}))
 
 def deleteTask(request : HttpRequest, task):
     '''Test to just do a click for htmx-get'''
 
     if request.method == 'DELETE':
         Tasks.objects.get(name=task).delete()
-    return HttpResponse(render(request, 'todo-list.html', {"tasks" : Tasks.objects.all()}))
+    return HttpResponse(render(request, 'todo-list_todo.html', {"tasks" : Tasks.objects.all()}))
 
 def loginUser(request):
     
     if request.method == 'GET':
-        return HttpResponse(render(request, 'registration/login.html'))
+        return HttpResponse(render(request, 'registration/login_todo.html'))
     if request.method == 'POST':
         user = request.POST.get('username')
         passw = request.POST.get('password')
@@ -44,7 +44,7 @@ def loginUser(request):
             return redirect('homepage')
         else:
             return redirect('login')
-    return HttpResponse(render(request, 'registration/login.html'))
+    return HttpResponse(render(request, 'registration/login_todo.html'))
 
 
 def logoutUser(request):
@@ -67,7 +67,7 @@ def createUser(request):
             return redirect('homepage')
         else:
             print("UNKNOWN LOGIN ERROR") # Shouldnt rise but is just for me.
-    return HttpResponse(render(request, 'registration/create-user.html'))
+    return HttpResponse(render(request, 'registration/create-user_todo.html'))
 
 
 def userExists(request):
