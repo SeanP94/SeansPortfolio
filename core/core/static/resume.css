@@ -1,0 +1,80 @@
+.centeredColumn {
+    height: 95vh; 
+    width: 70%;  
+    box-shadow: 1px 5px 5px black;
+}
+
+.mainBackground {
+    background-image: linear-gradient(#556366, #292a30)!important;
+    background-size:  100% 100%;
+}
+
+.leftCol {
+    color: white;
+    text-align: center;
+    background-color: #2e3039;
+    height: 95vh;
+}
+
+
+
+.nav {
+    height: 5vh;
+}
+
+.leftCol ul {
+    padding: 20px;
+}
+
+.leftCol li {
+    color: white;
+    background-color: #2e3039;
+    border-color: #565c75 ;
+}
+
+.bLine {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #565c75;
+}
+
+.leftCol img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.myResources {
+    text-align: left;
+    padding-top: 20px;
+}
+
+.myResources  h4{
+    padding-left: 35px;
+}
+
+/* Right Column */
+
+
+.rightCol {
+    color: black;
+    background-color: whitesmoke !important;
+    height: 95vh;
+    overflow: scroll;
+}
+
+.rightCol h2 {
+    color: #2e3039; /* Same gray as rightCol */
+}
+
+
+.infoList {
+    background-color: whitesmoke !important;
+}
+
+.preTitlePadding {
+    margin-top: 10px;
+}

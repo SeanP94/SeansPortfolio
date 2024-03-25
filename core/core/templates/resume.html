@@ -1,0 +1,179 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Resume</title>
+        <link rel="stylesheet" href="/static/resume.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    </head>
+    <body class="mainBackground">
+        {% include 'navbar.html' %}
+
+        <div id="resume" class="container text-white centeredColumn">
+            <div class="row">
+                <div class="leftCol p-2 col-3">
+                    <div class="d-flex flex-column">
+                        <img class="align-items-center" src="/static/pfp.jpg">
+                        <div class="p-2 bLine" >
+                            <h3><b>Sean Perry</b></h3>
+                            <h4>Software Engineer</h4>
+                        </div>
+                        <div class="myResources">
+                            <h4>Contact Info</h4>
+                            <ul class="list-group list-group-flush ">
+                                <!-- <li class="list-group-item"> -->
+                                    <!-- <i class="fa-solid fa-phone"></i> 1-760-000-0000 -->
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa-regular fa-envelope"></i> seanep94@gmail.com
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa-brands fa-linkedin"></i> <a href='https://www.linkedin.com/in/seanp1994/'>LinkedIn</a>
+                                </li>
+                                <li class="list-group-item">
+                                     <i class="fa-brands fa-github"></i> <a href="https://github.com/SeanP94">GitHub</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa-solid fa-location-dot"></i> Riverside, California
+                                </li>
+                            </ul>
+                            <h4>Education</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <span style="color: lightblue;"><h6><b>Bachelors Of Science in Computer Science</b></h6></span> 
+                                    <span style="color: lightcyan">January 2020 - May 2023</span><br>
+                                    <a href='https://www.csusm.edu/'>California State University San Marcos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightCol p-2 col-9">
+                    <div class="container">
+                        <!-- Summary -->
+                        <div >
+                            <h2>Summary</h2>
+                            <p class="bLine"> <!-- I Think Bootstrap does somethin to p's padding-bottom-->
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Software Developer with knowledge in software development, analyzing data and maintaining data flow. Worked on rebuilding SQL database to optimize report queries and merging old reporting data with new database. Led two final projects in school, organizing both teams with JIRA and leading both projects to achieve an A.</p>      
+                        </div>
+                        <!-- Skillset Rows -->
+                        <div class="preTitlePadding">
+                            <h2>Skillset</h2>
+                            <ul class="list-group list-group-flush bLine">
+                                <li class="list-group-item infoList">
+                                    <div class="row">
+                                        <div class="col-3"><b>Languages<br>Experienced<br>Working Familiarity</b></div>
+                                        <div class="col-9"><br>Python, PostgreSQL, T-SQL<br>C++, C, GO, Javascript, HTML, CSS</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item infoList">
+                                    <div class="row">
+                                        <div class="col-3"><b>Signficant Libraries</b></div>
+                                        <div class="col-9"> Django, Pandas, Numpy, Scikit-Learn, Seaborn, Matplotlib, HTMX, </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item infoList d-flex flex-row">
+                                    <div class="row">
+                                        <div class="col-3"><b>General Skills and Technologies</b></div>
+                                        <div class="col-9">Linux, Windows, Excel, Power BI, Jira (Agile Development),Software Development, Data Analysis, Data Cleansing, Pipeline Development, Restful API's, Database Design, Team Management</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Job Experience Rows -->
+                        <div class="preTitlePadding">
+                            <h2>Job Experience</h2>
+                            <ul class="list-group list-group-flush ">
+                                <li class="list-group-item infoList">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <h5>PIRCH</h5>
+                                            <h6><i>BI Data Analyst</i></h6>
+                                            10/2021 - Present
+                                        </div>
+                                        <div class="col-9">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item infoList">
+                                                    Built procedures to extract data from over 300 outside vendors for reporting and inventory purposes.
+                                                </li>
+                                                <li class="list-group-item infoList">
+                                                    Restructured SQL database for a new internal system and reworked report queries reducing run time by up 80%.
+                                                </li>
+                                                <li class="list-group-item infoList">
+                                                    Implemented Python for data analysis on large datasets along with linear regression and predictive modeling.
+                                                </li>
+                                                <li class="list-group-item infoList">
+                                                    Created a set of dashboards to prioritize decreasing the amount of inventory on hand and prioritizing sales of high velocity products, saving the company on average 5 million per year on space and inventory.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item infoList">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <h5>Waterstone Faucets</h5>
+                                            <h6><i>CAD Drafter</i></h6>
+                                            10/2019 - 10/2021
+                                        </div>
+                                        <div class="col-9">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item infoList">
+                                                    Designed mechanical drafts and supported the engineering team on altering 3D models.
+                                                </li>
+                                                <li class="list-group-item infoList">
+                                                    Overhauled JavaScript, HTML, and CSS for functionality on the company website to better display product designs. Increasing sales in lower sold products by up to 50%.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item infoList">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <h5>Pacific Sales</h5>
+                                            <h6><i>Customer Service Supervisor</i></h6>
+                                            10/2017 - 10/2019
+                                        </div>
+                                        <div class="col-9">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item infoList ">
+                                                    Led Inventory and Operations department, addressing urgent client demands and system malfunctions.
+                                                </li>
+                                                <li class="list-group-item infoList">
+                                                    Managed store projects and maintained one of the top 5 spots in loss prevention and customer satisfaction.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item infoList">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <h5>Pacific Sales</h5>
+                                            <h6><i>Customer Service Representative</i></h6>
+                                            11/2014 - 10/2017
+                                        </div>
+                                        <div class="col-9">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item infoList ">
+                                                    Worked with customers so solve problems and process transactions.
+                                                </li>
+                                                <li class="list-group-item infoList">
+                                                    Worked as backup for the CSR Supervisor, handling issues when they were out and filling in where needed.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
+</html>
