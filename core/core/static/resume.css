@@ -1,26 +1,28 @@
 .centeredColumn {
     height: 95vh; 
-    width: 70%;  
+    /* width: 100%;   */
     box-shadow: 1px 5px 5px black;
 }
 
 .mainBackground {
     background-image: linear-gradient(#556366, #292a30)!important;
-    background-size:  100% 100%;
+    /* background-size:  100% 100%; */
 }
+.nav {
+    height: 5vh;
+}
+
+.centeredColumn {
+    height: 95vh; 
+    box-shadow: 1px 5px 5px black;
+}    
 
 .leftCol {
     color: white;
     text-align: center;
     background-color: #2e3039;
     height: 95vh;
-}
-
-
-
-.nav {
-    height: 5vh;
-}
+}    
 
 .leftCol ul {
     padding: 20px;
@@ -41,8 +43,10 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 250px;
-    height: 250px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -63,7 +67,9 @@
     color: black;
     background-color: whitesmoke !important;
     height: 95vh;
-    overflow: scroll;
+    overflow-y: scroll;
+    width: 100%;
+    
 }
 
 .rightCol h2 {
@@ -77,4 +83,34 @@
 
 .preTitlePadding {
     margin-top: 10px;
+}
+
+@media (max-width: 992px) { 
+    .leftCol img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* For Smaller Screen size logic.*/
+@media (max-width: 768px) {
+    .leftCol {
+        height: 100%;
+    }    
+
+
+    .leftCol img {
+        width: 250px;
+        height: 250px;
+    }
+
+
+    .rightCol {
+        height: 100%;
+        overflow-y:visible;
+    }
+    .mainBackground {
+        background-image: linear-gradient(#fff, #fff)!important; /* Solve a bug for the background... */
+        /* background-size:  100% 100%; */
+    }
 }
