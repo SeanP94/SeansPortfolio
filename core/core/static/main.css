@@ -77,3 +77,17 @@ body {
 .notifyBox > h2 {
     color: #292a30;
 }
+
+
+
+@media (max-width: 992px) { 
+  
+    .nav {
+        height: 100%;
+    }
+}
+
+/* For Smaller Screen size logic.*/
+@media (max-width: 768px) {
+
+}

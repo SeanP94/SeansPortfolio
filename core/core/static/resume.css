@@ -91,6 +91,10 @@
         width: 150px;
         height: 150px;
     }
+        
+    .nav {
+        height: 100%;
+    }
 }
 
 /* For Smaller Screen size logic.*/
@@ -98,6 +102,7 @@
     .leftCol {
         min-height: 100%;
     }    
+
 
 
     .leftCol img {
