@@ -19,31 +19,46 @@
     /* margin:auto; */
     height: 500px;
     width: auto;
-    border-radius: 30%;   
+    border-radius: 100%;   
 }
 
 .intro {
     /* The Intro box of me. */
-    position: relative;
+    position: relative; 
     margin: auto;
     top:75px;
     height: 500px;
 }
 
+.intro-about-me {
+    position: relative;
+    text-align: center;
+    margin:0;
+    padding:0;
+    top:25%;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.me-buttons{
+    position: inherit;
+    top: 100px;
+    /* bottom: 0; */
+    /* left: 40%; */
+}
+
 .glass-bg {
+    position: relative;
+    top:10%;
+    height: 300px;
     color: white;
-    background: linear-gradient(135deg, rgba(25, 23, 44, 0.1), rgba(25, 23, 44, 0));
+    background: linear-gradient(135deg, rgba(75, 75, 76, 0.1), rgba(25, 23, 44, 0));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 30px;
     /* box-shadow: 0 8px 32px 0 (rgba(0,0,0,0,0.5)); */
 
-}
-
-.intro  p {
-    height: 500px;
-    width:  100%;
-    text-align: left;
 }
 
 
@@ -55,10 +70,6 @@ body {
     font-family: 'Roboto', sans-serif;
     background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(204,204,217,1) 100%);
 }
-
-/* .background {
-    background-image: linear-gradient(white, whitesmoke)!important;
-} */
 
 .mainCode {
     /* On change for height, change this to navbar.html's navbar equal to  (navbar-height - 100) # 100 - 5 Curr. */
@@ -98,6 +109,19 @@ body {
 }
 
 
+
+
+/* Reconfigure bootstrap */
+.btn-secondary {
+    width: 40px;
+    background-color:orange;
+    border-color: orange;
+    /* 
+    height:45px; */
+    text-align: center;
+    align-items: center;
+    border-radius: 30px;
+}
 
 @media (max-width: 992px) { 
     .nav {
