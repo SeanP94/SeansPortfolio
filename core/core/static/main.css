@@ -48,6 +48,13 @@
     /* left: 40%; */
 }
 
+.about-me {
+    height: 550px;
+    width:100%;
+    
+    box-shadow: 0 0 1px 1px grey;
+}
+
 .glass-bg {
     position: relative;
     top:10%;
