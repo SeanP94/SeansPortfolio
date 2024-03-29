@@ -1,8 +1,8 @@
 
-
+document.addEventListener('DOMContentLoaded', function() {
+    /* Having issues with webpage loading */
 
     
-document.addEventListener('DOMContentLoaded', function() {
     const app = Vue.createApp({
         delimiters: ["[[", "]]"],
         data() {
@@ -13,4 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
         computed: {},
         methods: {},
         }).mount("#app");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
+

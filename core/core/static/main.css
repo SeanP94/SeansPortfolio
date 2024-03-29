@@ -133,6 +133,11 @@ body {
     border-radius: 30px;
 }
 
+/* Vue stuff */
+[v-cloak] {
+    display: none;
+}
+
 @media (max-width: 992px) { 
     .nav {
         height: 100%;

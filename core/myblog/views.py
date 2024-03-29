@@ -11,5 +11,12 @@ def home(request: HttpRequest):
 def resume(request: HttpRequest):
     return HttpResponse(render(request, 'resume.html', {}))
 
+
+
+def loadAboutMe(request: HttpRequest, page:str):
+    pass
+
+
+
 def My404_view(request: HttpRequest, exception):
     return HttpResponse(render(request, '404.html', {}))
