@@ -8,23 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
         data() {
             return {
                 message: "Hello Vue!",
-                page: String
+                page: null,
+                currTab: "About Me" 
             };
         },
         computed: {},
         methods: {
             fetchData: function() {
-                fetch('http://localhost:8000/gets/loadAboutMe/', {
+                fetch('http://localhost:8000/gets/loadAboutMe/' + 'Wombo', {
                     method: 'GET'
                 })
-                .then(response => { response.json().then(res => this.page = res['page'])})
+                .then(response => { response.json().then(res => this.page = res)})
                 .catch(err => console.log(err));
             }
         },
         beforeMount() {
             this.fetchData()
         }
-        }).mount("#app");
+        }).mount("#homepage");
 
 
 

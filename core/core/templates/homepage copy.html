@@ -33,14 +33,33 @@
         </div>
     </div> 
 
-    <div class="container" id="homepage" style="position:relative; top:120px;"> 
+    <div class="container" id="aboutMe" style="position:relative; top:120px;"> 
         <h1 class="text-start">About me:</h1>
-        <!-- Insert here the state of the website... -->
-        {% include "aboutMe.html" %} 
+        <!-- TODO: use Vue to work with this section. -->
+        <!-- TODO: read from databse different sections of about me info. -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Work History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tech Skillset</a>
+            </li>
+        </ul>
+        <div>
+            <div class="container text-wrap about-me border border-secondary" v-cloak>
+                <p>
+                    <!-- Hide this before loaded... -->
+                    <div v0>[[page]]</div>
+                </p>
+            </div>
+        </div>
+        <div class="text-start" style="top:50px; position: relative; bottom: 0;">
+            Banner Image by <a href="https://www.freepik.com/free-vector/gradient-technological-background_12980762.htm#query=technology%20background&position=38&from_view=keyword&track=ais&uuid=d6fc8fc2-d1b9-4319-bb05-45b00f126685">Freepik    </a>
+        </div>
     </div>
-</div>
-<div class="text-start" style="position: absolute; bottom: 0;">
-    Banner Image by <a href="https://www.freepik.com/free-vector/gradient-technological-background_12980762.htm#query=technology%20background&position=38&from_view=keyword&track=ais&uuid=d6fc8fc2-d1b9-4319-bb05-45b00f126685">Freepik    </a>
 </div>
 <!-- TODO: Make a bottom border page, make sure this is included. -->
 {% endblock %}
