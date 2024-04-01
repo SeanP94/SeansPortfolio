@@ -78,7 +78,8 @@ body {
     /* background: rgb(255,255,255); */
     
     font-family: 'Roboto', sans-serif;
-    background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(204,204,217,1) 100%);
+    background-color: #10374c;
+    /* background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(204,204,217,1) 100%); */
     /* background: radial-gradient(circle, rgba(24,13,38,1) 50%, rgba(24,13,38,1) 100%); */
 }
 
