@@ -3,8 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 #banner {
-    background-image: url("/static/banner.jpg");
-    /* background-color: red; */
+    color: black;
+    background-color: #dbcbd8;
+    background-image: linear-gradient(300deg, #cbcbdc 0%, #2f5b91 75%);
     height: 650px;
     width: 100%;
     min-width: 500px;
@@ -12,7 +13,8 @@
     text-align: center; 
     position: relative;
     margin: auto;
-    box-shadow: 0 0 25px 25px white inset;
+    /* box-shadow: 0 -5px 5px -5px white inset; */
+    /* box-shadow: 0 0 25px 25px white inset; */
     /* box-shadow: 0 25px 25px rgba(0, 0, 0, 0.5) inset; */
 }
 #pfp {
@@ -21,6 +23,7 @@
     height: 500px;
     width: auto;
     border-radius: 100%;   
+    box-shadow: -1em 0 4em #2f5b91, -1em 0 4em #cbcbdc;
 }
 
 .intro {
@@ -62,8 +65,8 @@
     position: relative;
     top:10%;
     height: 300px;
-    color: white;
-    background: linear-gradient(135deg, rgba(75, 75, 76, 0.1), rgba(25, 23, 44, 0));
+    color: black;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(25, 23, 44, 0));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 30px;
@@ -78,7 +81,7 @@ body {
     /* background: rgb(255,255,255); */
     
     font-family: 'Roboto', sans-serif;
-    background-color: #10374c;
+    background-color: #fff;
     /* background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(204,204,217,1) 100%); */
     /* background: radial-gradient(circle, rgba(24,13,38,1) 50%, rgba(24,13,38,1) 100%); */
 }
