@@ -19,6 +19,7 @@
     /* box-shadow: 0 0 25px 25px white inset; */
     box-shadow: 0 -450px 700px -450px   rgba(255, 255, 255, 0.5) inset;
 }
+
 #pfp {
     
     /* margin:auto; */
@@ -54,13 +55,7 @@
     /* left: 40%; */
 }
 
-.about-me {
-    /* position: relative;
-    height: 100%;
-    max-height: 400px;
-    width:100%; */
-    
-}
+
 
 .glass-bg {
     position: relative;
@@ -77,42 +72,34 @@
 
 .skill-section {
     margin-top: 100px;
-    height:500px;
+    height: 400px;
+}
+
+.about-me {
+    margin-top: 100px;
 }
 
 .leftCol {
-    /* height: 100%;
-    top: 50%; */
-    /* -ms-transform: translateY(-50%);
-    transform: translateY(-50%); */
+
 }
 
 .am-block {
-    /* max-height: 250px;*/
-    /* height:100%; */
+    height: 200px;
 }
 
 body {
-    /* background: rgb(255,255,255); */
     font-family: 'Roboto', sans-serif;
     background-color: whitesmoke;
-    /* height:95vh; */
-    /* background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(204,204,217,1) 100%); */
-    /* background: radial-gradient(circle, rgba(24,13,38,1) 50%, rgba(24,13,38,1) 100%); */
     overflow-y: scroll;    
 }
 
 
 
 .nav {
-    height: 50px;
+    height: 3vh;
     box-shadow: 0 4px 20px -20px whitesmoke inset !important;
 } 
 
-.bLine {
-    padding-bottom: 40px;
-    /* border-bottom: 1px solid #565c75; */
-}
 
 
 /* Reconfigure bootstrap */
@@ -136,6 +123,10 @@ body {
     .nav {
         height: 100%;
     }
+    .skill-section {
+        height: 100%;
+    }
+    
 }
 
 /* For Smaller Screen size logic.*/

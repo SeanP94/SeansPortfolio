@@ -7,6 +7,7 @@
 {% block body %}
 
 <div class="text-center">
+    <!-- Banner Portion of the page. -->
     <div class="img-fluid " id="banner">
         <div class="container "> 
             <div class="row intro">
@@ -32,43 +33,42 @@
             </div>
         </div>
     </div> 
-
-    <div class="container  border border-white shadow p-3 mb-5 bg-white rounded">
+    <!-- Bottom Portion of the page -->
+    <div class="container border border-white shadow p-3 mb-5 bg-white rounded">
         <div class="container text-wrap skill-section border border-secondary">
-            <div class="row">
-                <div class="col-4 d-flex align-items-stretch border border-secondary">
-                    <h4 class="p-3">Who Am I?</h4>
+            <div class="row d-flex align-items-center leftCol">
+                <div class="col-lg-4 h-100 p-3 border border-secondary">
+                    <h4 class="p-3 border-bottom">Who Am I?</h4>
                     <p>I'm a forever student who loves to tinker and solve problems.</p>
                 </div>
-                <div class="col-8" >
+                <div class="col-lg-8" >
                     <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-4 am-block  border border-secondary">
+                        <div class="col-lg-1"></div>
+                        <div class="col-s-6 col-lg-4 am-block border border-secondary">
                             1
                         </div>
-                        <div class="col-2"></div>
-                        <div class="col-4 am-block  border border-secondary">
+                        <div class="col-lg-2"></div>
+                        <div class="col-s-6 col-lg-4 am-block border border-secondary">
                             2
                         </div>
-                        <div class="col-1"></div>
+                        <div class="col-lg-1"></div>
                     </div>
                     <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-4 am-block  border border-secondary">
-                            3
+                        <div class="col-lg-1"></div>
+                        <div class="col-s-6 col-lg-4 am-block border border-secondary">
+                            1
                         </div>
-                        <div class="col-2"></div>
-                        <div class="col-4 am-block  border border-secondary">
-                            4
+                        <div class="col-lg-2"></div>
+                        <div class="col-s-6 col-lg-4 am-block border border-secondary">
+                            2
                         </div>
-                        <div class="col-1"></div>
+                        <div class="col-lg-1"></div>
                     </div>
                 </div>
             </div>
         </div>
-    
         <!-- TODO: This should be a bit more stylized. And have toggle boxes using VUe.js -->
-        <div id="homepage"> 
+        <div id="homepage" class="about-me"> 
             <h1 class="text-start">My Skills:</h1>
             <!-- Insert here the state of the website... -->
             {% include "aboutMe.html" %} 
