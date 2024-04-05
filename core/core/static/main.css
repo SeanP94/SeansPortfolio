@@ -49,10 +49,7 @@
 }
 
 .me-buttons{
-    position: inherit;
-    top: 100px;
-    /* bottom: 0; */
-    /* left: 40%; */
+    padding-top: 10px;
 }
 
 
@@ -60,7 +57,8 @@
 .glass-bg {
     position: relative;
     top:10%;
-    height: 300px;
+    min-height: 300px;
+    max-height: 400px;
     color: black;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(25, 23, 44, 0));
     backdrop-filter: blur(20px);
@@ -127,6 +125,35 @@ body {
         height: 100%;
     }
     
+    #banner {
+        height: 1000px;
+    }
+    
+    #pfp {
+        position: relative;
+        bottom:350px;
+        /* margin:auto; */
+        height: 350px;
+        width: auto;
+        
+        border-radius: 100%;   
+        box-shadow: -1em 0 4em #2f5b91, -1em 0 4em #cbcbdc;
+    }
+
+    .me-buttons{
+        padding-top: 10px;
+    }
+
+
+
+    .glass-bg {
+        position: relative;
+        top: 420px;
+        max-height: 500px;
+        min-height: 400px;
+        
+    }
+
 }
 
 /* For Smaller Screen size logic.*/
