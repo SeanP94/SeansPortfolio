@@ -75,6 +75,7 @@
 
 .about-me {
     margin-top: 100px;
+    margin-bottom: 300px;
 }
 
 .leftCol {
@@ -98,6 +99,10 @@ body {
     box-shadow: 0 4px 20px -20px whitesmoke inset !important;
 } 
 
+.symbol-box {
+    width: 50px;
+    height: 55px;
+}
 
 
 /* Reconfigure bootstrap */
