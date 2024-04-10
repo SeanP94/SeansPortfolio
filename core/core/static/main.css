@@ -74,7 +74,10 @@
 }
 
 .about-me {
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.experience {
     margin-bottom: 300px;
 }
 
