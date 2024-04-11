@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2b!5wgj*q-20j2$3e1t=m$)ebr3p9)_*qaw+wth+y!f1^@90@n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = str(os.environ.get('DEBUG')) == 1
 
 ALLOWED_HOSTS = ['*']
 
@@ -81,6 +81,35 @@ DATABASES = {
     }
 }
 
+
+DB_DATABASE= os.environ.get("POSTGRES_DB")
+DB_USER= os.environ.get("POSTGRES_USER")
+DB_PASSWORD= os.environ.get("POSTGRES_PASSWORD")
+DB_HOST = os.environ.get("POSTGRES_HOST")
+DB_PORT = os.environ.get("POSTGRES_PORT")
+
+DB_IS_AVAIL = all([
+    DB_DATABASE
+    , DB_USER
+    , DB_PASSWORD
+    , DB_HOST
+    , DB_PORT
+])
+
+POSTGRES_READY = str(os.environ.get('POSTGRES_READY')) == 1
+
+# Once we're using Postgres this will takeover from SQLite.
+if DB_IS_AVAIL and POSTGRES_READY:
+    DATABASES = {
+        'default': {
+            "ENGINE" : 'django.db.backends.postgresql'
+            , "NAME" : DB_DATABASE 
+            , "USER" : DB_USER
+            , "PASSWORD" : DB_PASSWORD
+            , "HOST" : DB_HOST
+            , "PORT" : DB_PORT
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
