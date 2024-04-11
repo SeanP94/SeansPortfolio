@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    BlogTemplate
+{% endblock %}
+
+{% block body %}
+<div class=" blog-page container-lg border border-white shadow p-3 mb-5 bg-white rounded text-start">
+    {% block headline %}
+
+    {% endblock %}
+    <div class="border border-bottom"></div>
+    {% block mainpage %}
+
+    {% endblock %}
+</div>
+{% endblock %}

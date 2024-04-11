@@ -11,6 +11,8 @@ def home(request: HttpRequest):
 def resume(request: HttpRequest):
     return HttpResponse(render(request, 'resume.html', {}))
 
+def tempBlog(request: HttpRequest):
+    return HttpResponse(render(request, 'tempBlog.html', {}))
 
 
 def My404_view(request: HttpRequest, exception):

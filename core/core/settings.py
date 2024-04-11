@@ -23,8 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2b!5wgj*q-20j2$3e1t=m$)ebr3p9)_*qaw+wth+y!f1^@90@n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.environ.get('DEBUG')) == 1
 
+# DEBUG = os.environ.get('DEBUG') == '1' # This isnt working... It breaks the static files
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
@@ -98,7 +99,7 @@ DB_IS_AVAIL = all([
 
 POSTGRES_READY = str(os.environ.get('POSTGRES_READY')) == 1
 
-# Once we're using Postgres this will takeover from SQLite.
+
 if DB_IS_AVAIL and POSTGRES_READY:
     DATABASES = {
         'default': {
@@ -110,6 +111,7 @@ if DB_IS_AVAIL and POSTGRES_READY:
             , "PORT" : DB_PORT
         }
     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
