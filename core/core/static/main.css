@@ -6,24 +6,21 @@
     color: black;
     background-color: #dbcbd8;
     background-image: linear-gradient(300deg, #cbcbdc 0%, #2f5b91 75%);
-    height: 650px;
+    height: 500px;
     width: 100%;
     min-width: 500px;
-    max-width: 2500px;
+    max-width: 2000px;
     text-align: center; 
     position: relative;
     margin: auto;
-    
-    /* box-shadow: 0 -25px 35px -25px   rgba(255, 255,255,0.15) inset; */
-    /* box-shadow: 0 -5px 5px -5px white inset; */
-    /* box-shadow: 0 0 25px 25px white inset; */
     box-shadow: 0 -450px 700px -450px   rgba(255, 255, 255, 0.5) inset;
 }
 
-#pfp {
-    
+.pfp {
     /* margin:auto; */
-    height: 500px;
+    position: relative; 
+    height: 400px;
+    top: 50px;
     width: auto;
     border-radius: 100%;   
     box-shadow: -1em 0 4em #2f5b91, -1em 0 4em #cbcbdc;
@@ -33,7 +30,7 @@
     /* The Intro box of me. */
     position: relative; 
     margin: auto;
-    top:75px;
+    /* top:20px; */
     height: 500px;
 }
 
@@ -42,7 +39,7 @@
     text-align: center;
     margin:0;
     padding:0;
-    top:25%;
+    top: 15%;
     margin: auto;
     width: 50%;
     padding: 10px;
@@ -51,8 +48,6 @@
 .me-buttons{
     padding-top: 10px;
 }
-
-
 
 .glass-bg {
     position: relative;
@@ -69,21 +64,19 @@
 
 
 .skill-section {
-    margin-top: 100px;
+    margin-top: 50px;
     height: 400px;
 }
 
 .experience {
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-.about-me {
-    margin-bottom: 300px;
+    margin-top: 25px;
+    margin-bottom: 50px;
 }
 
-.leftCol {
-    
+.about-me {
+    margin-bottom: 100px;
 }
+
 
 .am-block {
     height: 200px;
@@ -134,10 +127,12 @@ body {
     }
     
     #banner {
-        height: 1000px;
+        height: 800px;
     }
     
-    #pfp {
+    .pfp {
+        
+        top:auto;
         position: relative;
         bottom:350px;
         /* margin:auto; */
@@ -152,14 +147,11 @@ body {
         padding-top: 10px;
     }
 
-
-
     .glass-bg {
         position: relative;
-        top: 420px;
-        max-height: 500px;
-        min-height: 400px;
-        
+        top: 400px;
+        max-height: 400px;
+        min-height: 350px;
     }
 
 }
