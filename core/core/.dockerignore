@@ -1,10 +1,12 @@
-__pycache__/
 venv/
 core/.env
 *.pyc
 *.pyo
 build/
 dist/
+staticfiles
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

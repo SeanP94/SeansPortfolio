@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+
+# For dev mode
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,13 +31,14 @@ SECRET_KEY = 'django-insecure-2b!5wgj*q-20j2$3e1t=m$)ebr3p9)_*qaw+wth+y!f1^@90@n
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # DEBUG = os.environ.get('DEBUG') == '1' # This isnt working... It breaks the static files
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -97,7 +105,7 @@ DB_IS_AVAIL = all([
     , DB_PORT
 ])
 
-POSTGRES_READY = str(os.environ.get('POSTGRES_READY')) == 1
+POSTGRES_READY = str(os.environ.get('POSTGRES_READY')) == '1'
 
 
 if DB_IS_AVAIL and POSTGRES_READY:
@@ -147,15 +155,28 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-STATIC_ROOT = 'core/'
-# print(STATIC_ROOT)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# STATICFILES_DIRS = [
+
+#     os.path.join(BASE_DIR, "core/static/"),
+# ]
+# print(['SDASDasdaSDAD'])
 STATICFILES_DIRS = [
-    # BASE_DIR / "core/static/"
-    # "core/static/"
-    os.path.join(BASE_DIR, "core/static/"),
+    os.path.join(BASE_DIR, "core/static")
 ]
+
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": 'whitenoise.storage.CompressedStaticFilesStorage',
+    },
+}
+print([STATIC_ROOT])
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

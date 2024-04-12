@@ -16,8 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import settings as set
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+     
+
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', include('myblog.urls'))          # Main blog project.
 ]
+
+# Works when Debug=True so that gunicorn can read the static files. 
+urlpatterns += staticfiles_urlpatterns()
