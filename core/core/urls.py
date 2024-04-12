@@ -19,11 +19,9 @@ from django.urls import path, include
 from . import settings as set
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-     
-
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('myblog.urls'))          # Main blog project.
 ]
 

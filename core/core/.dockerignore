@@ -5,7 +5,7 @@ core/.env
 build/
 dist/
 staticfiles
-
+.kube
 
 
 # Byte-compiled / optimized / DLL files
