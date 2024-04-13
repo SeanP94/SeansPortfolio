@@ -6,8 +6,8 @@ build/
 dist/
 staticfiles
 .kube
-
-
+.env_prod
+.env.prod
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

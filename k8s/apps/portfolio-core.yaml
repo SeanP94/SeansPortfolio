@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-core-deployment
+  labels:
+    app: django-core-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: django-core-deployment
+  template:
+    metadata:
+      labels:
+        app: django-core-deployment
+    spec:
+      containers:
+      - name: portfolio-core
+        image: registry.digitalocean.com/krayte/portfolio-core:latest
+        imagePullPolicy: Always
+        envFrom:
+          - secretRef:
+              name: django-core-env
+        env:
+          - name: PORT
+            value: "8002"
+        ports:
+        - containerPort: 8002
+      imagePullSecrets:
+        - name: krayte   
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-core-service
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8002
+  selector:
+    app: django-core-deployment

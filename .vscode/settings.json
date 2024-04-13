@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "kubernetes://schema/v1%40service": "file:///home/krayt/Projects/SeansPortfolio/k8s/apps/portfolio-core.yaml"
+    }
+}

@@ -26,12 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2b!5wgj*q-20j2$3e1t=m$)ebr3p9)_*qaw+wth+y!f1^@90@n'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # DEBUG = os.environ.get('DEBUG') == '1' # This isnt working... It breaks the static files
-DEBUG = False
+DEBUG = str(os.environ.get('DEBUG')) == '1'
 ALLOWED_HOSTS = ['*']
 
 
@@ -96,7 +96,7 @@ DB_USER= os.environ.get("POSTGRES_USER")
 DB_PASSWORD= os.environ.get("POSTGRES_PASSWORD")
 DB_HOST = os.environ.get("POSTGRES_HOST")
 DB_PORT = os.environ.get("POSTGRES_PORT")
-
+DB_USE_SSL = os.environ.get("DB_USE_SSL")
 DB_IS_AVAIL = all([
     DB_DATABASE
     , DB_USER
@@ -119,6 +119,11 @@ if DB_IS_AVAIL and POSTGRES_READY:
             , "PORT" : DB_PORT
         }
     }
+
+    if str(DB_USE_SSL) == '1':
+        DATABASES['default']['OPTIONS'] = {
+            'sslmode' : 'required'
+        }
 
 
 # Password validation
@@ -159,23 +164,18 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# STATICFILES_DIRS = [
 
-#     os.path.join(BASE_DIR, "core/static/"),
-# ]
-# print(['SDASDasdaSDAD'])
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "core/static")
 ]
 
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STORAGES = {
     "staticfiles": {
         "BACKEND": 'whitenoise.storage.CompressedStaticFilesStorage',
     },
 }
-print([STATIC_ROOT])
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

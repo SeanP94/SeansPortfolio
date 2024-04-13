@@ -26,12 +26,19 @@ DJANGO_SUPERUSER_PASSWORD=password123
 DJANGO_SUPERUSER_EMAIL=none@gmail.com
 DJANGO_SECRET_KEY=123123123123123123jkhjkjk
 
+DB_USE_SSL=0
 POSTGRES_DB=db
 POSTGRES_PASSWORD=pgpassword123
 POSTGRES_USER=myuser
 POSTGRES_HOST=postgres_db
 POSTGRES_PORT=5433
-
-REDIS_HOST=redis_db
-REDIS_PORT=6380
+POSTGRES_READY=1
 `
+
+
+Commands for me in the future:
+
+docker build -t registry.digitalocean.com/krayte/portfolio-core:latest -f Dockerfile .
+docker push registry.digitalocean.com/krayte/portfolio-core --all-tags
+
+kubectl create secret generic django-core-env --from-env-file=core/.env_prod

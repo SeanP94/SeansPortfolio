@@ -1,0 +1,18 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "terminal.integrated.env.osx": {
+            "KUBECONFIG": "${workspaceFolder}/.kube/django-portfolio-kubeconfig.yaml"
+        },
+        "terminal.integrated.env.windows": {
+            "KUBECONFIG": "${workspaceFolder}\\.kube\\django-portfolio-kubeconfig.yaml"
+        },
+        "terminal.integrated.env.linux": {
+            "KUBECONFIG": "${workspaceFolder}/.kube/django-portfolio-kubeconfig.yaml"
+        }
+    }
+}
