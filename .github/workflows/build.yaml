@@ -1,0 +1,40 @@
+name: Build Docker Container and Push to registry
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  test_django_job:
+    uses: SeanP94/SeansPortfolio/.github/workflows/test-django.yaml
+  docker_build:
+    runs-on: ubuntu-latest
+    needs: [test_django_job]
+    env:
+      DJANGO_SECRET_KEY: test-key-not-good-maybe-make-one-better
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_API_TOKEN_KEY }}
+      - name: Login To DO Container Registry with creds
+        run: doctl registry login --expiry-seconds 1200
+      - name: Build container image
+        working-directory: ./core
+        run: |
+          docker build -f Dockerfile
+            -t registry.digitalocean.com/<your-registry>/django-portfolio:latest \
+            -t registry.digitalocean.com/<your-registry>/django-portfolio:$
+            {GITHUB_SHA::7} \
+            .
+      - name: Push Image
+        run: |
+          docker push registry.digitalocean.com/krayte/portfolio-core --all-tags
+          
