@@ -46,7 +46,7 @@ jobs:
           DEBUG=${{ secrets.DEBUG }}
           DJANGO_SUPERUSER_USERNAME=${{ secrets.DJANGO_SUPERUSER_USERNAME }}
           DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }}
-          DJANGO_SUERPUSER_EMAIL=${{ secrets.DJANGO_SUERPUSER_EMAIL }}
+          DJANGO_SUEPRUSER_EMAIL=${{ secrets.DJANGO_SUEPRUSER_EMAIL }}
           DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }}
           DB_USE_SSL=${{ secrets.DB_USE_SSL }}
           POSTGRES_DB=${{ secrets.POSTGRES_DB }}
