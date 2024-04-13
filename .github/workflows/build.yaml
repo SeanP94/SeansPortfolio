@@ -11,7 +11,7 @@ on:
 
 jobs:
   test_django_job:
-    uses: SeanP94/SeansPortfolio/.github/workflows/test-django.yaml
+    uses: SeanP94/SeansPortfolio/.github/workflows/test-django.yaml@main
   build:
     runs-on: ubuntu-latest
     needs: [test_django_job]
