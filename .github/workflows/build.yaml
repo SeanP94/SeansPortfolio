@@ -30,10 +30,10 @@ jobs:
         working-directory: ./core
         run: |
           docker build -f Dockerfile \
-            -t registry.digitalocean.com/krayte/django-portfolio:latest \
-            -t registry.digitalocean.com/krayte/django-portfolio:${GITHUB_SHA::7} \
+            -t registry.digitalocean.com/krayte/portfolio-core:latest \
+            -t registry.digitalocean.com/krayte/portfolio-core:${GITHUB_SHA::7} \
             .
       - name: Push Image
         run: |
-          docker push registry.digitalocean.com/krayte/django-portfolio --all-tags
+          docker push registry.digitalocean.com/krayte/portfolio-core --all-tags
           
