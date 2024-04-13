@@ -7,6 +7,10 @@ staticfiles
 .kube
 .env_prod
 .env.prod
+.env
+core/.env
+ 
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

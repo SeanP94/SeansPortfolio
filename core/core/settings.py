@@ -122,7 +122,7 @@ if DB_IS_AVAIL and POSTGRES_READY:
 
     if str(DB_USE_SSL) == '1':
         DATABASES['default']['OPTIONS'] = {
-            'sslmode' : 'required'
+            'sslmode' : 'require'
         }
 
 
