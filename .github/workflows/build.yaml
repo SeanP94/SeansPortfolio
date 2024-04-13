@@ -58,8 +58,8 @@ jobs:
           PROD = ${{ secrets.PROD }}
 
           EOF
-          
-          kubectl delete django-core-env
+
+          kubectl delete secret django-core-env
           kubectl create secret generic django-core-env --from-env-file=core/.env.prod
 
       - name: Update Deployment image
