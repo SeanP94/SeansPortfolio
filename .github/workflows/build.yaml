@@ -17,6 +17,7 @@ jobs:
     needs: [test_django_job]
     env:
       DJANGO_SECRET_KEY: test-key-not-good-maybe-make-one-better
+      CLUSTER_NAME: django-portfolio
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -36,4 +37,16 @@ jobs:
       - name: Push Image
         run: |
           docker push registry.digitalocean.com/krayte/portfolio-core --all-tags
-          
+      - name: k8s cluster kubeconfig file with creds
+        run: |
+          doctl kubernetes cluster kubeconfig save --expiry-seconds 600 {{ env.CLUSTER_NAME }}
+      - name: Update Deployment image
+        run: |
+          kubectl set image deployment/django-core-deployment portfolio-core=registry.digitalocean.com/krayte/portfolio-core:${GITHUB_SHA::7}
+      - name: Wait for rollout
+        run: |
+          kubectl rollout status deployment/django-core-deployment
+      - name: Migrate DB
+        run: |
+          export SINGLE_RUNNING_POD=$(kubectl get pod -l app=django-core-deployment -o jsonpath="{.items[0].metadata.name}")
+          kubectl exec -it $SINGLE_POD_NAME -- bash /app/migrate.sh
