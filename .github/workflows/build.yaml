@@ -35,5 +35,5 @@ jobs:
             .
       - name: Push Image
         run: |
-          docker push registry.digitalocean.com/krayte/portfolio-core --all-tags
+          docker push registry.digitalocean.com/krayte/django-portfolio --all-tags
           
