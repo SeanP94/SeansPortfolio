@@ -48,5 +48,5 @@ jobs:
           kubectl rollout status deployment/django-core-deployment
       - name: Migrate DB
         run: |
-          export SINGLE_RUNNING_POD=$(kubectl get pod -l app=django-core-deployment -o jsonpath="{.items[0].metadata.name}")
+          export SINGLE_POD_NAME=$(kubectl get pod -l app=django-core-deployment -o jsonpath="{.items[0].metadata.name}")
           kubectl exec -it $SINGLE_POD_NAME -- bash /app/migrate.sh
