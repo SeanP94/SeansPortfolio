@@ -39,7 +39,7 @@ jobs:
           docker push registry.digitalocean.com/krayte/portfolio-core --all-tags
       - name: k8s cluster kubeconfig file with creds
         run: |
-          doctl kubernetes cluster kubeconfig save --expiry-seconds 600 {{ env.CLUSTER_NAME }}
+          doctl kubernetes cluster kubeconfig save --expiry-seconds 600 ${{ env.CLUSTER_NAME }}
       - name: Update Deployment image
         run: |
           kubectl set image deployment/django-core-deployment portfolio-core=registry.digitalocean.com/krayte/portfolio-core:${GITHUB_SHA::7}
