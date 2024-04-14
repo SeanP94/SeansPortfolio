@@ -1,0 +1,25 @@
+name: Django Rollout
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+
+jobs:
+  rollout:
+    runs-on: ubuntu-latest
+    env:
+      CLUSTER_NAME: django-portfolio
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_API_TOKEN_KEY }}
+      - name: k8s cluster kubeconfig file with creds
+        run: |
+          doctl kubernetes cluster kubeconfig save --expiry-seconds 600 ${{ env.CLUSTER_NAME }}
+      - name: Run Rollout of dpeloy
+        run: |
+          kubectl rollout restart deployment/django-core-deployment
