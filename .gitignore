@@ -8,6 +8,12 @@ staticfiles
 .kube
 .env_prod
 .env.prod
+secret-portfolio-core.yaml
+k8s/apps/secret-portfolio-core.yaml
+k8s/apps/secret.txt
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

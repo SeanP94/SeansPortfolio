@@ -19,7 +19,7 @@ https://github.com/SeanP94/DjangoHtmxTodo
 
 
 Your .env file inside core/ should look like this (Obviously change things)
-`
+```
 DEBUG=0
 DJANGO_SUPERUSER_USERNAME=admin
 DJANGO_SUPERUSER_PASSWORD=password123
@@ -33,7 +33,7 @@ POSTGRES_USER=myuser
 POSTGRES_HOST=postgres_db
 POSTGRES_PORT=5433
 POSTGRES_READY=1
-`
+```
 
 
 Commands for me in the future:
@@ -41,4 +41,4 @@ Commands for me in the future:
 docker build -t registry.digitalocean.com/krayte/portfolio-core:latest -f Dockerfile .
 docker push registry.digitalocean.com/krayte/portfolio-core --all-tags
 
-kubectl create secret generic django-core-env --from-env-file=core/.env_prod
+kubectl create secret generic django-core-env --from-env-file=core/.env.prod
