@@ -41,7 +41,7 @@
     padding:0;
     top: 15%;
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
 }
 
@@ -155,47 +155,19 @@ body {
     .glass-bg {
         position: relative;
         top: 420px;
-        max-height: 400px;
+        max-height: 40px;
         min-height: 350px;
     }
-
+    .intro-about-me {
+        position: relative;
+        text-align: center;
+        margin:0;
+        padding:0;
+        top: 5%;
+        margin: auto;
+        width: 70%;
+        padding: 10px;
+    }
 }
 
 /* For Smaller Screen size logic.*/
-@media (max-width: 768px) {
-    .nav {
-        height: 100%;
-    }
-    .skill-section {
-        height: 100%;
-    }
-    
-    #banner {
-        height: 800px;
-    }
-    
-    .pfp {
-        
-        top:auto;
-        position: relative;
-        bottom:350px;
-        /* margin:auto; */
-        height: 350px;
-        width: auto;
-        
-        border-radius: 100%;   
-        box-shadow: -1em 0 4em #2f5b91, -1em 0 4em #cbcbdc;
-    }
-
-    .me-buttons{
-        padding-top: 10px;
-    }
-
-    .glass-bg {
-        position: relative;
-        top: 400px;
-        max-height: 400px;
-        min-height: 350px;
-    }
-
-}
